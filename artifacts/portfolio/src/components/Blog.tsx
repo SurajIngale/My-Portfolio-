@@ -1,33 +1,33 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArrowRight, Calendar, Clock, BookOpen } from 'lucide-react';
 
 const posts = [
   {
-    title: "Why we migrated from Redis to KeyDB for our caching layer",
-    excerpt: "Exploring the trade-offs of multi-threading in caching systems, and how KeyDB solved our specific bottleneck in high-throughput API endpoints.",
-    date: "Oct 12, 2023",
+    title: "Mastering Server Components in Next.js 14",
+    excerpt: "A practical guide to balancing Server Components and Client Components for optimal performance, SEO, and interactive UX.",
+    date: "Nov 15, 2023",
     readTime: "8 min read",
-    tag: "Architecture"
+    tag: "Frontend"
   },
   {
-    title: "Understanding Race Conditions in Distributed Systems",
-    excerpt: "A deep dive into distributed locking mechanisms, optimistic concurrency control, and why relying on database constraints isn't always enough.",
-    date: "Aug 04, 2023",
+    title: "From Express to Go: Rewriting Our Core API",
+    excerpt: "Why we migrated our heavy compute endpoints to Go, the challenges we faced, and how we achieved a 60% reduction in response times.",
+    date: "Sep 22, 2023",
     readTime: "12 min read",
-    tag: "Engineering"
+    tag: "Backend"
   },
   {
-    title: "Building an Event-Sourced Ledger with Kafka",
-    excerpt: "How we implemented a strict double-entry accounting system that processes thousands of transactions per second without losing strict ACID properties.",
-    date: "May 28, 2023",
-    readTime: "15 min read",
-    tag: "FinTech"
+    title: "Designing Resilient Microservices with Docker & Redis",
+    excerpt: "Implementing caching strategies, message queues, and containerization to build a backend architecture that scales gracefully under load.",
+    date: "Jul 10, 2023",
+    readTime: "10 min read",
+    tag: "Architecture"
   }
 ];
 
 export function Blog() {
   return (
-    <section className="py-24 relative">
+    <section className="py-24 relative bg-black/20 border-y border-white/5">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,11 +38,14 @@ export function Blog() {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold flex items-center gap-4">
               <span className="text-primary font-mono text-sm tracking-widest uppercase">07.</span>
-              System Logs
+              Technical Writing
             </h2>
+            <p className="text-muted-foreground mt-4 max-w-xl">
+              Thoughts and lessons learned while building modern web applications.
+            </p>
           </div>
           <a href="#" className="hidden md:flex items-center gap-2 text-sm font-mono text-primary hover:text-primary/80 transition-colors">
-            View All Entries <ArrowRight size={16} />
+            View All Articles <ArrowRight size={16} />
           </a>
         </motion.div>
 
@@ -61,8 +64,8 @@ export function Blog() {
                   <span className="text-primary border border-primary/30 bg-primary/10 px-2 py-0.5 rounded">
                     {post.tag}
                   </span>
-                  <span className="flex items-center gap-1"><Calendar size={12} /> {post.date}</span>
-                  <span className="flex items-center gap-1"><Clock size={12} /> {post.readTime}</span>
+                  <span className="flex items-center gap-1.5"><Calendar size={14} /> {post.date}</span>
+                  <span className="flex items-center gap-1.5"><Clock size={14} /> {post.readTime}</span>
                 </div>
                 
                 <h3 className="text-xl md:text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
@@ -75,7 +78,7 @@ export function Blog() {
               </div>
               
               <div className="hidden md:flex w-12 h-12 rounded-full border border-white/10 items-center justify-center group-hover:border-primary group-hover:bg-primary/10 transition-colors shrink-0">
-                <ArrowRight className="text-muted-foreground group-hover:text-primary transition-colors" size={20} />
+                <BookOpen className="text-muted-foreground group-hover:text-primary transition-colors" size={20} />
               </div>
             </motion.div>
           ))}
@@ -83,7 +86,7 @@ export function Blog() {
         
         <div className="mt-8 md:hidden">
           <a href="#" className="flex items-center justify-center gap-2 text-sm font-mono text-primary glass-panel py-4 rounded-xl">
-            View All Entries <ArrowRight size={16} />
+            View All Articles <ArrowRight size={16} />
           </a>
         </div>
       </div>

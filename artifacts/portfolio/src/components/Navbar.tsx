@@ -14,11 +14,11 @@ export function Navbar() {
 
   const links = [
     { label: 'About', href: '#about' },
+    { label: 'Experience', href: '#experience' },
     { label: 'Skills', href: '#skills' },
-    { label: 'Architecture', href: '#architecture' },
     { label: 'Projects', href: '#projects' },
+    { label: 'Architecture', href: '#architecture' },
     { label: 'Terminal', href: '#terminal' },
-    { label: 'Contact', href: '#contact' },
   ];
 
   return (

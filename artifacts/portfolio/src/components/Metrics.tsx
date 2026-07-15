@@ -29,7 +29,6 @@ function Counter({ end, suffix = "", duration = 2 }: { end: number, suffix?: str
         if (!startTime) startTime = timestamp;
         const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
         
-        // Easing function (easeOutQuart)
         const easeProgress = 1 - Math.pow(1 - progress, 4);
         setCount(Math.floor(easeProgress * end));
 
@@ -51,30 +50,24 @@ function Counter({ end, suffix = "", duration = 2 }: { end: number, suffix?: str
 }
 
 export function Metrics() {
+  const metrics = [
+    { value: 120, suffix: '+', label: 'Frontend Components', color: 'text-primary' },
+    { value: 50, suffix: 'M+', label: 'API Requests / Day', color: 'text-secondary' },
+    { value: 99, suffix: '.9%', label: 'CI/CD Success Rate', color: 'text-emerald-400' },
+    { value: 2000, suffix: '+', label: 'GitHub Commits', color: 'text-amber-400' }
+  ];
+
   return (
     <section className="py-24 relative border-y border-white/5 bg-black/20">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
           
-          <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl">
-            <Counter end={99} suffix=".99%" />
-            <p className="text-sm font-mono text-primary mt-2 uppercase tracking-wider">Uptime SLA</p>
-          </div>
-
-          <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl">
-            <Counter end={250} suffix="M+" />
-            <p className="text-sm font-mono text-secondary mt-2 uppercase tracking-wider">Reqs / Day</p>
-          </div>
-
-          <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl">
-            <Counter end={14} suffix="" />
-            <p className="text-sm font-mono text-primary mt-2 uppercase tracking-wider">Microservices</p>
-          </div>
-
-          <div className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl">
-            <Counter end={12} suffix="ms" />
-            <p className="text-sm font-mono text-secondary mt-2 uppercase tracking-wider">Avg Latency</p>
-          </div>
+          {metrics.map((m, i) => (
+            <div key={i} className="flex flex-col items-center justify-center p-6 glass-panel rounded-2xl border-white/5 hover:border-white/10 transition-colors">
+              <Counter end={m.value} suffix={m.suffix} />
+              <p className={`text-sm font-mono mt-2 uppercase tracking-wider ${m.color}`}>{m.label}</p>
+            </div>
+          ))}
 
         </div>
       </div>

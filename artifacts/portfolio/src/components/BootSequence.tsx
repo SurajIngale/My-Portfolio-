@@ -5,13 +5,13 @@ export function BootSequence({ onComplete }: { onComplete: () => void }) {
   const [step, setStep] = useState(0);
 
   const logs = [
-    "[SYSTEM] Initiating boot sequence...",
-    "[NETWORK] Connecting to distributed grid...",
-    "[DATABASE] Mounting primary datastores (PostgreSQL, Redis)...",
-    "[CACHE] Warming up edge caches...",
-    "[SERVICES] 14/14 Microservices healthy.",
-    "[AUTH] Validating root access...",
-    "Access Granted. Welcome, Engineer."
+    "[SYSTEM] Initiating full-stack environment...",
+    "[FRONTEND] Mounting React components & hydration...",
+    "[BACKEND] Establishing Node.js & Go microservices...",
+    "[DATABASE] Syncing PostgreSQL and Redis clusters...",
+    "[DEVOPS] Validating CI/CD pipelines & Docker orchestration...",
+    "[AUTH] Performing JWT handshake...",
+    "Systems Online. Welcome to the workspace."
   ];
 
   useEffect(() => {

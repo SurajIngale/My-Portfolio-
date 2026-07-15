@@ -1,0 +1,868 @@
+# AI Prompt: Build a Premium 3D Backend Developer Portfolio Website
+
+Create a **world-class, premium, futuristic 3D portfolio website** for a **Backend Software Developer**. The website should feel like a blend of **Apple, Linear, Stripe, Vercel, and Framer**, with subtle 3D interactions and a polished developer aesthetic. Use **mock data only** (do not use any real personal information).
+
+---
+
+# Tech Stack
+
+Use:
+
+* Next.js 15 (App Router)
+* React 19
+* TypeScript
+* Tailwind CSS
+* Framer Motion
+* Three.js
+* React Three Fiber
+* Drei
+* GSAP (only where necessary)
+* Lucide Icons
+* React Icons
+* Lenis Smooth Scroll
+* React Intersection Observer
+* shadcn/ui
+* Zustand (optional)
+* React Query (if needed)
+
+Code should be production-ready, modular, reusable, responsive, accessible, and optimized.
+
+---
+
+# Theme
+
+Dark premium theme.
+
+Colors
+
+Background
+
+```
+#050816
+```
+
+Cards
+
+```
+#0F172A
+```
+
+Accent
+
+```
+#00F5FF
+```
+
+Secondary Accent
+
+```
+#7C3AED
+```
+
+Success
+
+```
+#22C55E
+```
+
+Typography
+
+```
+White
+Gray-400
+Gray-500
+```
+
+Glassmorphism
+
+Soft blur
+
+Floating cards
+
+Gradient borders
+
+Ambient lighting
+
+---
+
+# Overall Feel
+
+The website should feel like entering a futuristic backend engineer's workspace.
+
+Think:
+
+Apple
+
+Linear
+
+Stripe
+
+Vercel
+
+GitHub
+
+Framer
+
+No flashy gaming effects.
+
+Everything should be elegant.
+
+Minimal.
+
+Professional.
+
+---
+
+# Landing Experience
+
+When website opens
+
+Display an animated loading screen.
+
+Loading progress
+
+Developer logo
+
+Animated code compiling
+
+API requests
+
+Database connection
+
+Authentication successful
+
+Then smoothly transition to homepage.
+
+---
+
+# Hero Section
+
+This should be unforgettable.
+
+Create a full-screen interactive 3D scene.
+
+Center:
+
+A floating holographic server cube.
+
+Inside cube
+
+API routes flowing
+
+Database icons
+
+JWT tokens
+
+Cloud nodes
+
+Redis
+
+Kafka
+
+Docker
+
+PostgreSQL
+
+The cube rotates slowly.
+
+Mouse movement slightly changes camera angle.
+
+Particles float around.
+
+Background has subtle animated grid.
+
+Floating code snippets move slowly.
+
+Animated network connections.
+
+---
+
+Left Side
+
+Large title
+
+```
+Hi, I'm Alex Carter
+```
+
+Subtitle
+
+```
+Backend Software Engineer
+Building scalable APIs,
+distributed systems,
+and cloud-native applications.
+```
+
+Buttons
+
+View Projects
+
+Download Resume
+
+Contact
+
+GitHub
+
+LinkedIn
+
+---
+
+Right Side
+
+Floating holographic developer dashboard.
+
+Cards
+
+CPU Usage
+
+API Requests
+
+Redis Cache
+
+Database Status
+
+Microservices
+
+All values animated.
+
+---
+
+Scrolling Indicator
+
+Animated.
+
+---
+
+# About Section
+
+3D floating workspace.
+
+Laptop
+
+Server racks
+
+Coffee mug
+
+Mechanical keyboard
+
+API documentation
+
+Hover animations.
+
+Text
+
+Professional backend engineer passionate about designing scalable architectures...
+
+Timeline
+
+Education
+
+Experience
+
+Achievements
+
+Animated as user scrolls.
+
+---
+
+# Skills Galaxy
+
+One of the coolest sections.
+
+Create a huge 3D galaxy.
+
+Each technology is a floating glowing sphere.
+
+Examples
+
+Node.js
+
+Go
+
+TypeScript
+
+PostgreSQL
+
+Redis
+
+Docker
+
+Kubernetes
+
+Kafka
+
+RabbitMQ
+
+GraphQL
+
+REST
+
+MongoDB
+
+AWS
+
+Linux
+
+Git
+
+Prisma
+
+GORM
+
+JWT
+
+Hover
+
+Sphere enlarges.
+
+Shows
+
+Experience
+
+Projects
+
+Description
+
+Particles explode softly.
+
+---
+
+# Architecture Showcase
+
+Create an interactive system design.
+
+Animated microservices.
+
+Frontend
+
+↓
+
+API Gateway
+
+↓
+
+Authentication Service
+
+↓
+
+User Service
+
+↓
+
+Notification Service
+
+↓
+
+Payment Service
+
+↓
+
+Database
+
+↓
+
+Redis
+
+↓
+
+Kafka
+
+↓
+
+Cloud Storage
+
+Connections animate.
+
+Requests move.
+
+Packets travel.
+
+Hover explains every service.
+
+---
+
+# Featured Projects
+
+Create premium floating project cards.
+
+Each card has
+
+Glass effect
+
+3D hover
+
+Animated background
+
+Preview image
+
+Tech stack
+
+GitHub
+
+Live Demo
+
+Documentation
+
+Mock Projects
+
+1
+
+Enterprise Authentication
+
+JWT
+
+Refresh Token
+
+OAuth
+
+Redis
+
+RBAC
+
+2
+
+Banking Ledger
+
+Transactions
+
+Double Entry
+
+Reports
+
+3
+
+Society Management
+
+Visitors
+
+Residents
+
+Guards
+
+QR Entry
+
+4
+
+API Gateway
+
+Rate limiting
+
+Caching
+
+Authentication
+
+5
+
+Task Management
+
+Microservices
+
+Queues
+
+Notifications
+
+Each opens detailed modal.
+
+Modal contains
+
+Architecture
+
+Database
+
+API endpoints
+
+Challenges
+
+Gallery
+
+Metrics
+
+---
+
+# Backend Metrics Section
+
+Looks like DevOps dashboard.
+
+Cards
+
+```
+99.99% Uptime
+```
+
+```
+1.2M API Requests
+```
+
+```
+18 Microservices
+```
+
+```
+350ms Response Time
+```
+
+```
+99% Test Coverage
+```
+
+```
+500+ Deployments
+```
+
+Counters animate.
+
+Charts animate.
+
+---
+
+# Terminal Section
+
+Interactive terminal.
+
+Looks real.
+
+Commands
+
+```
+help
+
+skills
+
+projects
+
+experience
+
+contact
+
+resume
+
+clear
+```
+
+Typing animation.
+
+Blinking cursor.
+
+Command history.
+
+Autocomplete.
+
+---
+
+# GitHub Section
+
+Premium dashboard.
+
+Include
+
+Contribution graph
+
+Languages
+
+Repositories
+
+Commits
+
+Stars
+
+Activity heatmap
+
+Everything animated.
+
+Mock data.
+
+---
+
+# Experience Timeline
+
+Horizontal animated timeline.
+
+Cards float.
+
+Company logo.
+
+Role.
+
+Duration.
+
+Achievements.
+
+Tech stack.
+
+Hover expands.
+
+---
+
+# Testimonials
+
+Glass cards.
+
+Developer recommendations.
+
+Company logos.
+
+Animated carousel.
+
+Mock data.
+
+---
+
+# Certifications
+
+Floating certificates.
+
+3D rotation.
+
+Hover enlarges.
+
+---
+
+# Blog Section
+
+Cards.
+
+Articles.
+
+Backend engineering
+
+Scaling
+
+System design
+
+Performance
+
+Docker
+
+Microservices
+
+Distributed systems
+
+Mock data.
+
+---
+
+# Contact Section
+
+Premium.
+
+Split layout.
+
+Left
+
+Animated Earth
+
+or
+
+3D globe
+
+with network connections.
+
+Right
+
+Contact form.
+
+Fields
+
+Name
+
+Email
+
+Subject
+
+Message
+
+Animated validation.
+
+Submit animation.
+
+---
+
+# Footer
+
+Beautiful.
+
+Animated social icons.
+
+GitHub
+
+LinkedIn
+
+Twitter
+
+Email
+
+Resume
+
+Copyright.
+
+---
+
+# Cursor
+
+Custom cursor.
+
+Glowing.
+
+Expands over buttons.
+
+Changes color.
+
+---
+
+# Animations
+
+Everything smooth.
+
+Page transitions.
+
+Fade
+
+Slide
+
+Scale
+
+Rotate
+
+Blur
+
+3D
+
+Parallax
+
+Magnetic buttons
+
+Hover tilt
+
+Floating cards
+
+Spring animations
+
+No lag.
+
+60 FPS.
+
+---
+
+# Background
+
+Animated gradient.
+
+Stars.
+
+Particles.
+
+Constellations.
+
+Grid.
+
+Network nodes.
+
+Code rain (very subtle).
+
+Aurora.
+
+---
+
+# Sound (Optional)
+
+Very subtle hover sound.
+
+Toggle on/off.
+
+---
+
+# Mobile Version
+
+Not just responsive.
+
+Redesign for mobile.
+
+Touch gestures.
+
+Optimized 3D.
+
+---
+
+# Performance
+
+Lazy load 3D scenes.
+
+Dynamic imports.
+
+Image optimization.
+
+Suspense.
+
+Code splitting.
+
+Avoid unnecessary rerenders.
+
+---
+
+# Accessibility
+
+Keyboard navigation.
+
+ARIA labels.
+
+Reduced motion support.
+
+Contrast compliance.
+
+---
+
+# SEO
+
+Metadata.
+
+Open Graph.
+
+Twitter cards.
+
+Schema.
+
+Sitemap.
+
+Robots.
+
+---
+
+# Folder Structure
+
+```
+app/
+components/
+features/
+sections/
+hooks/
+lib/
+store/
+types/
+utils/
+constants/
+public/
+assets/
+styles/
+```
+
+---
+
+# Code Quality
+
+* Strict TypeScript
+* Reusable components
+* Clean architecture
+* Feature-based organization
+* Custom hooks
+* No duplicated code
+* ESLint + Prettier
+* Dark mode by default
+* Modular Three.js scenes
+* Fully documented components
+
+---
+
+# Final Goal
+
+The final result should feel like a **premium interactive experience**, not just a portfolio. It should immediately communicate the expertise of a backend engineer through **3D visual storytelling**, with interactive system architecture, animated infrastructure, elegant UI, and realistic mock data—showcasing backend concepts such as APIs, databases, caching, messaging, microservices, observability, and cloud infrastructure in a visually compelling yet professional way. The design should be memorable to recruiters while remaining performant, accessible, and production-ready.

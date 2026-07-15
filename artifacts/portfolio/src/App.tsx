@@ -3,15 +3,17 @@ import { BootSequence } from './components/BootSequence';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
+import { Experience } from './components/Experience';
 import { Skills } from './components/Skills';
+import { UIShowcase } from './components/UIShowcase';
+import { Process } from './components/Process';
 import { Architecture } from './components/Architecture';
 import { Projects } from './components/Projects';
 import { Metrics } from './components/Metrics';
 import { Testimonials } from './components/Testimonials';
-import { Certifications } from './components/Certifications';
+import { GithubActivity } from './components/GithubActivity';
 import { Blog } from './components/Blog';
 import { Terminal } from './components/Terminal';
-import { GithubActivity } from './components/GithubActivity';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { CustomCursor } from './components/CustomCursor';
@@ -40,12 +42,14 @@ export default function App() {
           <Hero />
           <Metrics />
           <About />
+          <Experience />
           <Skills />
+          <UIShowcase />
+          <Process />
           <Architecture />
           <Projects />
-          <Testimonials />
-          <Certifications />
           <GithubActivity />
+          <Testimonials />
           <Blog />
           <Terminal />
           <Contact />

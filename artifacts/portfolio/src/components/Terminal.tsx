@@ -14,7 +14,7 @@ export function Terminal() {
       command: '',
       output: (
         <div className="text-primary mb-2">
-          Welcome to AC-Term v2.1.0.<br/>
+          Welcome to AC-Term v3.0.0 (Full Stack Edition).<br/>
           Type <span className="text-secondary">help</span> to see available commands.
         </div>
       )
@@ -40,17 +40,25 @@ export function Terminal() {
         output = (
           <ul className="text-muted-foreground list-none space-y-1 my-2">
             <li><span className="text-primary w-20 inline-block">about</span> - Display biography</li>
-            <li><span className="text-primary w-20 inline-block">skills</span> - List technical skills</li>
+            <li><span className="text-primary w-20 inline-block">stack</span> - List full tech stack</li>
             <li><span className="text-primary w-20 inline-block">contact</span> - Show contact info</li>
             <li><span className="text-primary w-20 inline-block">clear</span> - Clear terminal output</li>
           </ul>
         );
         break;
       case 'about':
-        output = <div className="my-2 text-muted-foreground">Backend Engineer specializing in Go, TS, and distributed systems. Building the invisible layer of the internet.</div>;
+        output = <div className="my-2 text-muted-foreground">Full Stack Engineer specializing in React, Next.js, Node, Go, and distributed systems. Designing UIs and building the invisible layers beneath them.</div>;
         break;
+      case 'stack':
       case 'skills':
-        output = <div className="my-2 text-muted-foreground">Go, TypeScript, Rust, PostgreSQL, Redis, Kafka, Docker, Kubernetes, AWS.</div>;
+        output = (
+          <div className="my-2 space-y-1">
+            <div><span className="text-secondary">Frontend:</span> React, Next.js, TypeScript, Tailwind</div>
+            <div><span className="text-secondary">Backend:</span> Node.js, Go, Express, GraphQL</div>
+            <div><span className="text-secondary">Database:</span> PostgreSQL, MongoDB, Redis</div>
+            <div><span className="text-secondary">DevOps:</span> Docker, AWS, GitHub Actions, Vercel</div>
+          </div>
+        );
         break;
       case 'contact':
         output = <div className="my-2"><a href="mailto:hello@example.com" className="text-secondary hover:underline">hello@example.com</a></div>;
@@ -88,7 +96,7 @@ export function Terminal() {
               <div className="w-3 h-3 rounded-full bg-success/80" />
             </div>
             <TermIcon size={14} className="text-muted-foreground" />
-            <span className="text-xs font-mono text-muted-foreground">guest@ac-system:~</span>
+            <span className="text-xs font-mono text-muted-foreground">guest@ac-stack:~</span>
           </div>
 
           {/* Terminal Body */}

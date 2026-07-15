@@ -1,28 +1,30 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Globe, ShieldCheck, Users, Bell, CreditCard, Database, Zap, Archive, HardDrive, Server } from 'lucide-react';
+import { Globe, ShieldCheck, Users, Bell, CreditCard, Database, Zap, Archive, HardDrive, Server, Layout, Settings, Activity, Cloud } from 'lucide-react';
 
 const nodes = [
-  { id: 'client', label: 'Client', icon: Globe, col: 1, row: 3, desc: 'Web & Mobile clients initiating secure HTTPS requests.' },
-  { id: 'gateway', label: 'API Gateway', icon: Server, col: 2, row: 3, desc: 'Rust-based edge gateway handling rate limiting, SSL termination, and routing.' },
+  { id: 'browser', label: 'Client / SPA', icon: Globe, col: 1, row: 3, desc: 'React/Next.js frontend rendering dynamic user interfaces.' },
+  { id: 'frontend', label: 'Frontend Edge', icon: Layout, col: 2, row: 3, desc: 'Optimized static asset delivery via Vercel/CDN.' },
   
-  { id: 'auth', label: 'Auth Service', icon: ShieldCheck, col: 3, row: 1, desc: 'Go microservice for JWT validation and RBAC checks.' },
-  { id: 'user', label: 'User Service', icon: Users, col: 3, row: 3, desc: 'Core domain service managing user profiles and preferences.' },
-  { id: 'payment', label: 'Payment API', icon: CreditCard, col: 3, row: 5, desc: 'High-security PCI-compliant service for transaction processing.' },
+  { id: 'gateway', label: 'API Gateway', icon: Server, col: 3, row: 3, desc: 'Central routing, rate limiting, and SSL termination.' },
   
-  { id: 'cache', label: 'Redis Cache', icon: Zap, col: 4, row: 2, desc: 'Distributed caching layer for sub-millisecond read access.' },
-  { id: 'queue', label: 'Kafka Queue', icon: Archive, col: 4, row: 4, desc: 'Distributed event log for asynchronous inter-service communication.' },
+  { id: 'auth', label: 'Auth Service', icon: ShieldCheck, col: 4, row: 1, desc: 'JWT validation and OAuth2 integration.' },
+  { id: 'services', label: 'Business Logic', icon: Settings, col: 4, row: 3, desc: 'Core Node.js/Go microservices handling application rules.' },
   
-  { id: 'db_main', label: 'Primary DB', icon: Database, col: 5, row: 2, desc: 'PostgreSQL cluster with read-replicas for core relational data.' },
-  { id: 'db_events', label: 'Event Store', icon: HardDrive, col: 5, row: 4, desc: 'Append-only event store for audit logs and historical playback.' },
-  { id: 'notification', label: 'Workers', icon: Bell, col: 6, row: 4, desc: 'Background consumers processing emails, webhooks, and heavy jobs.' },
+  { id: 'cache', label: 'Redis Cache', icon: Zap, col: 5, row: 2, desc: 'Sub-millisecond read access for session & frequent data.' },
+  { id: 'queue', label: 'Message Queue', icon: Archive, col: 5, row: 4, desc: 'Kafka/RabbitMQ handling asynchronous background jobs.' },
+  
+  { id: 'db', label: 'Primary DB', icon: Database, col: 6, row: 2, desc: 'PostgreSQL relational core with read-replicas.' },
+  { id: 'storage', label: 'Cloud Storage', icon: Cloud, col: 6, row: 4, desc: 'AWS S3 bucket for media and static uploads.' },
+  
+  { id: 'monitor', label: 'Observability', icon: Activity, col: 7, row: 3, desc: 'Prometheus & Datadog tracking metrics and logs.' },
 ];
 
 export function Architecture() {
   const [activeNode, setActiveNode] = useState<string | null>(null);
 
   return (
-    <section id="architecture" className="py-24 relative overflow-hidden">
+    <section id="architecture" className="py-24 relative overflow-hidden bg-black/20 border-y border-white/5">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
       
       <div className="container mx-auto px-6 relative z-10">
@@ -34,26 +36,21 @@ export function Architecture() {
         >
           <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center md:justify-start gap-4">
             <span className="text-primary font-mono text-sm tracking-widest uppercase">04.</span>
-            System Architecture
+            Full Stack Pipeline
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl">
-            A high-level view of a typical distributed request flow. Hover over any node to inspect its responsibility in the microservices pipeline.
+            Tracing a request from the user's browser, through the frontend edge, deep into the microservices architecture and data persistence layers. Hover to inspect.
           </p>
         </motion.div>
 
         <div className="relative w-full overflow-x-auto pb-12">
-          <div className="min-w-[900px] h-[500px] relative glass-panel rounded-3xl p-8 border-white/5">
-            {/* Grid background for the diagram */}
+          <div className="min-w-[1000px] h-[550px] relative glass-panel rounded-3xl p-8 border-white/5">
+            {/* Grid background */}
             <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none rounded-3xl" />
             
-            {/* Draw connecting lines - simplified visually via CSS */}
+            {/* SVG Connecting lines */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
               <defs>
-                <linearGradient id="flow-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="rgba(0, 240, 255, 0)" />
-                  <stop offset="50%" stopColor="rgba(0, 240, 255, 0.5)" />
-                  <stop offset="100%" stopColor="rgba(0, 240, 255, 0)" />
-                </linearGradient>
                 <filter id="glow">
                   <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
                   <feMerge>
@@ -63,44 +60,46 @@ export function Architecture() {
                 </filter>
               </defs>
               
-              {/* Client to Gateway */}
-              <path d="M 120 250 L 250 250" stroke="rgba(255,255,255,0.1)" strokeWidth="2" fill="none" />
+              {/* Browser -> Frontend -> Gateway */}
+              <path d="M 120 275 L 250 275" stroke="rgba(255,255,255,0.1)" strokeWidth="2" fill="none" />
               <circle cx="0" cy="0" r="3" fill="#00F0FF" filter="url(#glow)">
-                <animateMotion dur="2s" repeatCount="indefinite" path="M 120 250 L 250 250" />
+                <animateMotion dur="2.5s" repeatCount="indefinite" path="M 120 275 L 250 275" />
               </circle>
 
-              {/* Gateway to Microservices */}
-              <path d="M 330 250 L 400 250 L 400 83 L 450 83" stroke="rgba(255,255,255,0.1)" strokeWidth="2" fill="none" />
+              <path d="M 330 275 L 430 275" stroke="rgba(255,255,255,0.1)" strokeWidth="2" fill="none" />
               <circle cx="0" cy="0" r="3" fill="#00F0FF" filter="url(#glow)">
-                <animateMotion dur="2s" begin="0.5s" repeatCount="indefinite" path="M 330 250 L 400 250 L 400 83 L 450 83" />
+                <animateMotion dur="2.5s" begin="0.5s" repeatCount="indefinite" path="M 330 275 L 430 275" />
               </circle>
 
-              <path d="M 330 250 L 450 250" stroke="rgba(255,255,255,0.1)" strokeWidth="2" fill="none" />
-              <circle cx="0" cy="0" r="3" fill="#00F0FF" filter="url(#glow)">
-                <animateMotion dur="2s" begin="0.7s" repeatCount="indefinite" path="M 330 250 L 450 250" />
+              {/* Gateway to Auth/Services */}
+              <path d="M 510 275 L 560 275 L 560 91 L 610 91" stroke="rgba(255,255,255,0.1)" strokeWidth="2" fill="none" />
+              <circle cx="0" cy="0" r="3" fill="#8B5CF6" filter="url(#glow)">
+                <animateMotion dur="2s" begin="1s" repeatCount="indefinite" path="M 510 275 L 560 275 L 560 91 L 610 91" />
               </circle>
 
-              <path d="M 330 250 L 400 250 L 400 416 L 450 416" stroke="rgba(255,255,255,0.1)" strokeWidth="2" fill="none" />
-              <circle cx="0" cy="0" r="3" fill="#00F0FF" filter="url(#glow)">
-                <animateMotion dur="2s" begin="0.9s" repeatCount="indefinite" path="M 330 250 L 400 250 L 400 416 L 450 416" />
+              <path d="M 510 275 L 610 275" stroke="rgba(255,255,255,0.1)" strokeWidth="2" fill="none" />
+              <circle cx="0" cy="0" r="3" fill="#8B5CF6" filter="url(#glow)">
+                <animateMotion dur="2s" begin="1.2s" repeatCount="indefinite" path="M 510 275 L 610 275" />
               </circle>
 
-              {/* User to DB/Cache */}
-              <path d="M 530 250 L 580 250 L 580 166 L 630 166" stroke="rgba(255,255,255,0.1)" strokeWidth="2" fill="none" />
-              <circle cx="0" cy="0" r="2" fill="#8B5CF6" filter="url(#glow)">
-                <animateMotion dur="2s" begin="1.2s" repeatCount="indefinite" path="M 530 250 L 580 250 L 580 166 L 630 166" />
-              </circle>
-
-              {/* User to Queue */}
-              <path d="M 530 250 L 580 250 L 580 333 L 630 333" stroke="rgba(255,255,255,0.1)" strokeWidth="2" fill="none" />
-              
-              {/* Payment to DB/Queue */}
-              <path d="M 530 416 L 580 416 L 580 333 L 630 333" stroke="rgba(255,255,255,0.1)" strokeWidth="2" fill="none" />
-
-              {/* Queue to Workers to Event Store */}
-              <path d="M 710 333 L 810 333" stroke="rgba(255,255,255,0.1)" strokeWidth="2" strokeDasharray="4 4" fill="none" />
+              {/* Services to Cache/DB/Queue */}
+              <path d="M 690 275 L 740 275 L 740 183 L 790 183" stroke="rgba(255,255,255,0.1)" strokeWidth="2" fill="none" />
               <circle cx="0" cy="0" r="2" fill="#10B981" filter="url(#glow)">
-                <animateMotion dur="3s" begin="1.5s" repeatCount="indefinite" path="M 710 333 L 810 333" />
+                <animateMotion dur="2s" begin="1.5s" repeatCount="indefinite" path="M 690 275 L 740 275 L 740 183 L 790 183" />
+              </circle>
+
+              <path d="M 690 275 L 740 275 L 740 366 L 790 366" stroke="rgba(255,255,255,0.1)" strokeWidth="2" fill="none" />
+              <circle cx="0" cy="0" r="2" fill="#F59E0B" filter="url(#glow)">
+                <animateMotion dur="2.5s" begin="1.6s" repeatCount="indefinite" path="M 690 275 L 740 275 L 740 366 L 790 366" />
+              </circle>
+
+              {/* Queue to Storage */}
+              <path d="M 870 366 L 910 366 L 910 458 L 960 458" stroke="rgba(255,255,255,0.1)" strokeWidth="2" strokeDasharray="4 4" fill="none" />
+              
+              {/* System to Monitor */}
+              <path d="M 970 183 L 1020 183 L 1020 275 L 1100 275" stroke="rgba(255,255,255,0.05)" strokeWidth="1" strokeDasharray="2 2" fill="none" />
+              <circle cx="0" cy="0" r="1.5" fill="#EF4444" filter="url(#glow)">
+                <animateMotion dur="3s" begin="0s" repeatCount="indefinite" path="M 970 183 L 1020 183 L 1020 275 L 1100 275" />
               </circle>
             </svg>
 
@@ -117,8 +116,8 @@ export function Architecture() {
                       isDimmed ? 'opacity-30 blur-[1px]' : 'opacity-100'
                     }`}
                     style={{
-                      left: `calc(${(node.col - 1) * 18}% + 40px)`,
-                      top: `calc(${(node.row - 1) * 16.6}% + 40px)`,
+                      left: `calc(${(node.col - 1) * 14.5}% + 80px)`,
+                      top: `calc(${(node.row - 1) * 16.6}% + 45px)`,
                       transform: 'translate(-50%, -50%)',
                       zIndex: isHovered ? 50 : 10
                     }}
@@ -135,7 +134,7 @@ export function Architecture() {
                       {/* Active Pulse Ring */}
                       {isHovered && (
                         <motion.div 
-                          layoutId="activeRing"
+                          layoutId="activeRingFull"
                           className="absolute inset-0 rounded-2xl border-2 border-primary"
                           initial={{ opacity: 0, scale: 0.8 }}
                           animate={{ opacity: [0.5, 0], scale: 1.3 }}
