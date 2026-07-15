@@ -3,40 +3,38 @@ import { Briefcase, Calendar } from 'lucide-react';
 
 const experiences = [
   {
-    role: 'Senior Full Stack Engineer',
-    company: 'Nexus Innovations',
-    duration: '2023 - Present',
+    role: 'Associate Software Developer',
+    company: 'Shaurya Technosoft Pvt. Ltd.',
+    duration: '2025 - Present',
     responsibilities: [
-      'Architected and delivered a multi-tenant SaaS platform using React, Next.js, and Go microservices.',
-      'Designed complex PostgreSQL schemas and integrated Redis for real-time dashboard analytics.',
-      'Collaborated closely with UX designers to implement accessible, responsive interfaces using Tailwind CSS.'
+      'Designed and developed scalable REST APIs using Node.js and TypeScript.',
+      'Built secure authentication systems with JWT, OTP, refresh tokens, and role-based authorization.',
+      'Developed loan lifecycle modules covering application, approval, disbursement, repayment, restructuring, and closure.',
+      'Designed reusable backend services with modular architecture.',
+      'Implemented Redis caching to improve performance.',
+      'Optimized PostgreSQL queries and database transactions.',
+      'Debugged production issues and improved API reliability.',
+      'Worked on multi-tenant architecture ensuring secure data isolation.',
+      'Collaborated with frontend, QA, and product teams to deliver production-ready features.'
     ],
-    achievements: 'Improved application load times by 60% through edge caching and optimized bundle splitting.',
-    tech: ['React', 'Next.js', 'Go', 'PostgreSQL', 'Redis', 'AWS']
+    achievements: 'Designed reusable loan modules and database optimizations ensuring 99% API reliability and high performance.',
+    tech: ['React', 'Node.js', 'TypeScript', 'PostgreSQL', 'Redis', 'JWT']
   },
   {
-    role: 'Full Stack Developer',
-    company: 'FinEdge Systems',
-    duration: '2021 - 2023',
+    role: 'Full Stack Development Intern',
+    company: 'Scalefull Technologies',
+    duration: '2024',
     responsibilities: [
-      'Built interactive trading dashboards processing live WebSocket streams using React and Redux Toolkit.',
-      'Developed high-throughput financial REST APIs in Node.js/Express with strict JWT authentication.',
-      'Containerized legacy applications and established automated testing pipelines using GitHub Actions.'
+      'Developed responsive React applications.',
+      'Built backend APIs using Node.js and Express.',
+      'Created authentication systems.',
+      'Designed appointment management solutions.',
+      'Developed e-commerce features.',
+      'Built project management dashboards.',
+      'Improved user experience through responsive UI design.'
     ],
-    achievements: 'Zero downtime during 3 major platform migrations affecting 50,000+ daily active users.',
-    tech: ['TypeScript', 'Node.js', 'React', 'Docker', 'WebSockets', 'Jest']
-  },
-  {
-    role: 'Software Engineer',
-    company: 'HealthSync Data',
-    duration: '2019 - 2021',
-    responsibilities: [
-      'Developed full-stack patient portals utilizing React for the client and Python/Django for backend services.',
-      'Implemented robust form validations and state management for complex healthcare workflows.',
-      'Managed cloud deployments on AWS and handled CI/CD integrations.'
-    ],
-    achievements: 'Successfully delivered a HIPAA-compliant reporting tool 2 weeks ahead of schedule.',
-    tech: ['Python', 'Django', 'React', 'AWS EC2', 'PostgreSQL']
+    achievements: 'Delivered interactive customer booking portals and e-commerce payment flows.',
+    tech: ['React', 'Node.js', 'Express', 'JavaScript', 'Tailwind CSS', 'CSS3']
   }
 ];
 

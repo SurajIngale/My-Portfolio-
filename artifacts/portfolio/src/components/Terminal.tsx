@@ -14,7 +14,7 @@ export function Terminal() {
       command: '',
       output: (
         <div className="text-primary mb-2">
-          Welcome to AC-Term v3.0.0 (Full Stack Edition).<br/>
+          Welcome to Suraj-Term v3.0.0 (Full Stack Edition).<br/>
           Type <span className="text-secondary">help</span> to see available commands.
         </div>
       )
@@ -47,21 +47,21 @@ export function Terminal() {
         );
         break;
       case 'about':
-        output = <div className="my-2 text-muted-foreground">Full Stack Engineer specializing in React, Next.js, Node, Go, and distributed systems. Designing UIs and building the invisible layers beneath them.</div>;
+        output = <div className="my-2 text-muted-foreground">Full Stack Software Developer specializing in building secure, scalable, and high-performance web applications. My expertise spans React, Node.js, TypeScript, PostgreSQL, Redis, and modern backend architectures.</div>;
         break;
       case 'stack':
       case 'skills':
         output = (
           <div className="my-2 space-y-1">
-            <div><span className="text-secondary">Frontend:</span> React, Next.js, TypeScript, Tailwind</div>
-            <div><span className="text-secondary">Backend:</span> Node.js, Go, Express, GraphQL</div>
-            <div><span className="text-secondary">Database:</span> PostgreSQL, MongoDB, Redis</div>
-            <div><span className="text-secondary">DevOps:</span> Docker, AWS, GitHub Actions, Vercel</div>
+            <div><span className="text-secondary">Frontend:</span> React, Next.js, JavaScript, TypeScript, HTML5, CSS3, Tailwind CSS, Bootstrap, Framer Motion</div>
+            <div><span className="text-secondary">Backend:</span> Node.js, Express.js, Go (Learning), REST APIs, JWT/OTP Auth, RBAC, Session Management</div>
+            <div><span className="text-secondary">Database:</span> PostgreSQL, MongoDB, Redis, Prisma ORM, MySQL</div>
+            <div><span className="text-secondary">DevOps:</span> Docker, Git, GitHub, Linux, Swagger, Postman</div>
           </div>
         );
         break;
       case 'contact':
-        output = <div className="my-2"><a href="mailto:hello@example.com" className="text-secondary hover:underline">hello@example.com</a></div>;
+        output = <div className="my-2"><a href="mailto:surajingale@example.com" className="text-secondary hover:underline">surajingale@example.com</a></div>;
         break;
       case 'clear':
         setHistory([]);
@@ -96,7 +96,7 @@ export function Terminal() {
               <div className="w-3 h-3 rounded-full bg-success/80" />
             </div>
             <TermIcon size={14} className="text-muted-foreground" />
-            <span className="text-xs font-mono text-muted-foreground">guest@ac-stack:~</span>
+            <span className="text-xs font-mono text-muted-foreground">guest@suraj-stack:~</span>
           </div>
 
           {/* Terminal Body */}

@@ -32,8 +32,8 @@ export function Navbar() {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <a href="#home" className="text-xl font-bold tracking-tighter flex items-center gap-2">
-          <span className="text-primary">A</span>
-          <span>Carter</span>
+          <span className="text-primary">S</span>
+          <span>Ingale</span>
           <span className="w-1.5 h-1.5 bg-primary rounded-full ml-1" />
         </a>
 

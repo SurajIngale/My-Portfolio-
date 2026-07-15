@@ -101,15 +101,17 @@ export function Hero() {
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-[1.1]">
             Hi, I'm
             <br />
-            Alex Carter
+            Suraj Ingale
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary glow-text-cyan block mt-2 text-4xl md:text-5xl">
-              Full Stack Software Engineer
+              Full Stack Software Developer
             </span>
           </h1>
           
           <p className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
-            I build exceptional digital experiences by combining modern frontend technologies with scalable backend architectures, cloud infrastructure, and intuitive user experiences.
+            Building scalable backend systems, modern web applications, and intuitive digital experiences.
+            <br /><br />
+            I'm a Full Stack Software Developer with over a year of professional experience building secure, scalable, and high-performance web applications. My expertise spans React, Node.js, TypeScript, PostgreSQL, Redis, and modern backend architectures. I enjoy solving complex engineering problems, designing clean APIs, optimizing performance, and delivering reliable software that creates real business value.
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -171,11 +173,11 @@ export function Hero() {
             className="absolute top-10 right-10 glass-panel p-4 rounded-xl flex items-center gap-4 border-white/10"
           >
             <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
-              <span className="font-mono font-bold">100</span>
+              <span className="font-mono font-bold">5+</span>
             </div>
             <div>
-              <p className="text-xs text-muted-foreground uppercase tracking-wider">Lighthouse</p>
-              <p className="font-medium text-sm">Performance Score</p>
+              <p className="text-xs text-muted-foreground uppercase tracking-wider">Backend Modules</p>
+              <p className="font-medium text-sm">Major Systems Built</p>
             </div>
           </motion.div>
 
@@ -186,11 +188,11 @@ export function Hero() {
             className="absolute bottom-10 left-10 glass-panel p-4 rounded-xl flex items-center gap-4 border-white/10"
           >
             <div className="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center text-secondary">
-              <span className="font-mono font-bold">98%</span>
+              <span className="font-mono font-bold">1+</span>
             </div>
             <div>
-              <p className="text-xs text-muted-foreground uppercase tracking-wider">Test Coverage</p>
-              <p className="font-medium text-sm">Jest & Cypress</p>
+              <p className="text-xs text-muted-foreground uppercase tracking-wider">Experience</p>
+              <p className="font-medium text-sm">Professional Years</p>
             </div>
           </motion.div>
         </div>

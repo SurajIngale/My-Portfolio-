@@ -20,8 +20,7 @@ function WorkspaceModel() {
       rotation={[0.13, 0.5, 0]}
       polar={[-0.4, 0.2]}
       azimuth={[-1, 0.75]}
-      config={{ mass: 2, tension: 400 }}
-      snap={{ mass: 4, tension: 400 }}
+      {...({ config: { mass: 2, tension: 400 }, snap: { mass: 4, tension: 400 } } as any)}
     >
       <group ref={groupRef} position={[0, -0.5, 0]} scale={1.2}>
         {/* Desk Surface */}
@@ -72,9 +71,9 @@ function WorkspaceModel() {
           <boxGeometry args={[1.0, 0.04, 0.3]} />
           <meshStandardMaterial color="#222" />
           {/* Key glows */}
-          <mesh position={[0, 0.02, 0]}>
+          <mesh position={[0, 0.02, 0]} rotation={[-Math.PI/2, 0, 0]}>
             <planeGeometry args={[0.9, 0.2]} />
-            <meshBasicMaterial color="#10B981" opacity={0.3} transparent rotation={[-Math.PI/2, 0, 0]} />
+            <meshBasicMaterial color="#10B981" opacity={0.3} transparent />
           </mesh>
         </mesh>
 
@@ -125,7 +124,11 @@ export function Contact() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center gap-3">
               <Terminal className="text-primary" /> Initialize Connection
             </h2>
-            <p className="text-muted-foreground">Looking to build a highly scalable web application, modern user interface, or robust API? Let's engineer a solution together.</p>
+            <p className="text-muted-foreground">
+              Let's build something amazing together.
+              <br /><br />
+              Whether it's building scalable APIs, designing modern web applications, or solving challenging engineering problems, I'm always excited to collaborate on meaningful projects.
+            </p>
           </div>
 
           <form onSubmit={handleSubmit} className="glass-panel p-8 rounded-2xl flex flex-col gap-6 border-white/10 relative overflow-hidden">

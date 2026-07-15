@@ -21,25 +21,26 @@ function Counter({ end, suffix = "", duration = 2 }: { end: number, suffix?: str
   }, []);
 
   useEffect(() => {
-    if (inView) {
-      let startTime: number;
-      let animationFrame: number;
+      if (inView) {
+        let startTime: number;
+        let animationFrame: number;
 
-      const update = (timestamp: number) => {
-        if (!startTime) startTime = timestamp;
-        const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
-        
-        const easeProgress = 1 - Math.pow(1 - progress, 4);
-        setCount(Math.floor(easeProgress * end));
+        const update = (timestamp: number) => {
+          if (!startTime) startTime = timestamp;
+          const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
+          
+          const easeProgress = 1 - Math.pow(1 - progress, 4);
+          setCount(Math.floor(easeProgress * end));
 
-        if (progress < 1) {
-          animationFrame = requestAnimationFrame(update);
-        }
-      };
+          if (progress < 1) {
+            animationFrame = requestAnimationFrame(update);
+          }
+        };
 
-      animationFrame = requestAnimationFrame(update);
-      return () => cancelAnimationFrame(animationFrame);
-    }
+        animationFrame = requestAnimationFrame(update);
+        return () => cancelAnimationFrame(animationFrame);
+      }
+      return () => {};
   }, [inView, end, duration]);
 
   return (
@@ -51,10 +52,10 @@ function Counter({ end, suffix = "", duration = 2 }: { end: number, suffix?: str
 
 export function Metrics() {
   const metrics = [
-    { value: 120, suffix: '+', label: 'Frontend Components', color: 'text-primary' },
-    { value: 50, suffix: 'M+', label: 'API Requests / Day', color: 'text-secondary' },
-    { value: 99, suffix: '.9%', label: 'CI/CD Success Rate', color: 'text-emerald-400' },
-    { value: 2000, suffix: '+', label: 'GitHub Commits', color: 'text-amber-400' }
+    { value: 25, suffix: '+', label: 'REST APIs Developed', color: 'text-primary' },
+    { value: 10, suffix: '+', label: 'Production Features Delivered', color: 'text-secondary' },
+    { value: 99, suffix: '%', label: 'API Reliability', color: 'text-emerald-400' },
+    { value: 100, suffix: '+', label: 'Bugs & Issues Resolved', color: 'text-amber-400' }
   ];
 
   return (

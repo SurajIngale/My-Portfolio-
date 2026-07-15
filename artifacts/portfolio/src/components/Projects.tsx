@@ -3,34 +3,42 @@ import { ExternalLink, Github, MonitorSmartphone, Server, Database, Layers } fro
 
 const projects = [
   {
-    title: 'Nexus AI SaaS Platform',
-    description: 'A comprehensive AI writing assistant offering document generation and content analysis. Features real-time collaborative editing, subscription management, and complex AI streaming APIs.',
-    tech: ['Next.js', 'React', 'Node.js', 'OpenAI API', 'Stripe', 'Prisma'],
-    features: ['Real-time streaming', 'Role-based access', 'Payment integration'],
+    title: 'Society Management Platform',
+    description: 'An enterprise-scale application for managing residents, authentication, financial operations, workforce, and visitor management.',
+    tech: ['React', 'Node.js', 'PostgreSQL', 'Redis', 'Express', 'Tailwind CSS'],
+    features: ['Secure Authentication', 'Multi-Tenant Architecture', 'REST APIs', 'Role Management', 'Financial Processing'],
     link: '#',
     github: '#'
   },
   {
-    title: 'Society Management System',
-    description: 'A full-stack administrative portal for residential communities. Includes maintenance tracking, complaint ticketing, visitor logs, and automated billing generation.',
-    tech: ['React', 'Node.js', 'PostgreSQL', 'Redis', 'Docker'],
-    features: ['Complex dashboards', 'Automated CRON jobs', 'PDF generation'],
+    title: 'Loan Management System',
+    description: 'Developed a complete loan lifecycle management solution supporting loan application, approval, disbursement, repayment, restructuring, settlement, and closure.',
+    tech: ['Node.js', 'TypeScript', 'PostgreSQL', 'Redis', 'Decimal.js'],
+    features: ['EMI Calculator', 'Repayment Processing', 'Financial Accuracy'],
     link: '#',
     github: '#'
   },
   {
-    title: 'Vanguard E-Commerce',
-    description: 'High-performance headless e-commerce storefront. Utilizes server-side rendering for optimal SEO, integrated headless CMS for inventory, and dynamic cart management.',
-    tech: ['Next.js', 'TypeScript', 'MongoDB', 'Redux Toolkit', 'Tailwind'],
-    features: ['Sub-second load times', 'Framer Motion animations', 'Headless CMS'],
+    title: 'Enterprise Authentication System',
+    description: 'Implemented secure authentication supporting OTP login, password login, JWT authentication, refresh tokens, session handling, and token blacklisting.',
+    tech: ['Node.js', 'Express.js', 'JWT', 'Redis', 'PostgreSQL'],
+    features: ['OTP Login', 'JWT & Refresh Tokens', 'Token Blacklisting'],
     link: '#',
     github: '#'
   },
   {
-    title: 'SyncFlow Project Manager',
-    description: 'Kanban-style project management tool with live updates. Drag-and-drop interfaces synchronized across all connected clients via WebSockets with persistent state in Postgres.',
-    tech: ['React', 'Go', 'WebSockets', 'PostgreSQL', 'React Query'],
-    features: ['Optimistic UI updates', 'Live synchronization', 'Complex drag-n-drop'],
+    title: 'E-Commerce Platform',
+    description: 'Developed a complete shopping platform featuring authentication, product management, shopping cart, checkout, and order management.',
+    tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Tailwind CSS'],
+    features: ['Product Management', 'Shopping Cart', 'Checkout & Orders'],
+    link: '#',
+    github: '#'
+  },
+  {
+    title: 'Appointment Management System',
+    description: 'Built a scheduling platform with patient and doctor dashboards, appointment booking, rescheduling, and cancellation.',
+    tech: ['React', 'Node.js', 'Express.js', 'PostgreSQL', 'Tailwind CSS'],
+    features: ['Doctor & Patient Dashboards', 'Appointment Booking', 'Rescheduling & Cancellation'],
     link: '#',
     github: '#'
   }

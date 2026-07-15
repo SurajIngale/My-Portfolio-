@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 
 const skills = [
-  { category: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Redux Toolkit', 'Framer Motion', 'React Query'] },
-  { category: 'Backend', items: ['Node.js', 'Go', 'Express', 'Fiber', 'REST API', 'GraphQL', 'Socket.IO'] },
-  { category: 'Database', items: ['PostgreSQL', 'MongoDB', 'Redis', 'Prisma', 'GORM'] },
-  { category: 'DevOps & Cloud', items: ['Docker', 'Kubernetes', 'GitHub Actions', 'AWS', 'Vercel', 'Nginx'] },
-  { category: 'Tools', items: ['Git', 'Figma', 'Postman', 'VS Code', 'Jest', 'Cypress'] }
+  { category: 'Frontend', items: ['React', 'Next.js', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap', 'Framer Motion'] },
+  { category: 'Backend', items: ['Node.js', 'Express.js', 'Go (Learning)', 'REST APIs', 'JWT Auth', 'OTP Auth', 'RBAC', 'Session Mgmt'] },
+  { category: 'Database', items: ['PostgreSQL', 'MongoDB', 'Redis', 'Prisma ORM', 'MySQL'] },
+  { category: 'DevOps', items: ['Docker', 'Git', 'GitHub', 'Linux', 'Swagger', 'Postman'] },
+  { category: 'Currently Learning', items: ['Golang', 'Kafka', 'Kubernetes', 'Distributed Systems', 'Cloud Infra', 'Microservices'] }
 ];
 
 export function Skills() {
