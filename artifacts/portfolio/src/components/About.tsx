@@ -3,9 +3,10 @@ import { motion } from 'framer-motion';
 export function About() {
   return (
     <section id="about" className="py-24 relative">
-      <div className="container mx-auto px-6">
+      <div className="absolute inset-0 bg-aura-grid opacity-20 pointer-events-none" />
+      <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -15,10 +16,10 @@ export function About() {
               <span className="text-primary font-mono text-sm tracking-widest uppercase">01.</span>
               Developer Profile
             </h2>
-            <div className="glass-panel p-8 rounded-2xl relative overflow-hidden border-white/10">
+            <div className="hud-panel glass-panel-strong p-8 rounded-2xl relative overflow-hidden border-white/10">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-[50px]" />
-              
-              <div className="prose prose-invert max-w-none text-muted-foreground space-y-4">
+
+              <div className="prose prose-invert max-w-none text-muted-foreground space-y-4 relative z-10">
                 <p>
                   <strong>Professional Summary:</strong> Associate Software Developer with experience in Full Stack and Backend Development, specializing in REST API development, authentication systems, financial modules, PostgreSQL database design, Redis caching, and scalable Node.js applications. Experienced in delivering production-ready software, resolving critical production issues, designing maintainable architectures, and collaborating with cross-functional teams to build enterprise applications.
                 </p>
@@ -31,12 +32,12 @@ export function About() {
               </div>
 
               <div className="mt-8 grid grid-cols-2 gap-4">
-                <div className="p-4 rounded-lg bg-black/40 border border-white/5">
-                  <div className="text-2xl font-bold text-foreground text-primary">1+</div>
+                <div className="p-4 rounded-lg bg-black/40 border border-white/5 hover:border-primary/30 transition-colors">
+                  <div className="text-2xl font-bold text-primary">1+</div>
                   <div className="text-sm text-muted-foreground font-mono mt-1">Years Experience</div>
                 </div>
-                <div className="p-4 rounded-lg bg-black/40 border border-white/5">
-                  <div className="text-2xl font-bold text-foreground text-secondary">10+</div>
+                <div className="p-4 rounded-lg bg-black/40 border border-white/5 hover:border-secondary/30 transition-colors">
+                  <div className="text-2xl font-bold text-secondary">10+</div>
                   <div className="text-sm text-muted-foreground font-mono mt-1">Production Features</div>
                 </div>
               </div>
@@ -58,7 +59,7 @@ export function About() {
                 { title: 'Performance Optimization', desc: 'Improving API response times, reducing bottlenecks, optimizing financial calculations, implementing caching strategies, and resolving production issues.' },
                 { title: 'System Design', desc: 'Creating modular architectures, multi-tenant systems, reusable services, scalable backend modules, and clean API designs.' }
               ].map((item, i) => (
-                <div key={i} className="glass-panel p-6 rounded-xl hover:border-primary/30 transition-colors border-white/5 group">
+                <div key={i} className="glass-panel-strong p-6 rounded-xl hover:border-primary/30 transition-all duration-300 border-white/5 group hover:translate-x-1">
                   <h4 className="font-bold text-lg mb-2 text-foreground group-hover:text-primary transition-colors">{item.title}</h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                 </div>

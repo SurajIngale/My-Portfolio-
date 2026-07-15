@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, MonitorSmartphone, Server, Database, Layers } from 'lucide-react';
+import { ExternalLink, GitFork as Github, Layers } from 'lucide-react';
 
 const projects = [
   {
@@ -47,7 +47,8 @@ const projects = [
 export function Projects() {
   return (
     <section id="projects" className="py-24 relative">
-      <div className="container mx-auto px-6">
+      <div className="absolute inset-0 bg-aura-grid opacity-20 pointer-events-none" />
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -73,13 +74,13 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="glass-panel p-8 rounded-2xl group hover:-translate-y-1 transition-all duration-300 relative overflow-hidden flex flex-col h-full border-white/5 hover:border-primary/30"
+              className="hud-panel glass-panel-strong p-8 rounded-2xl group hover:-translate-y-1 transition-all duration-300 relative overflow-hidden flex flex-col h-full border-white/5 hover:border-primary/30"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-              
+
               <div className="relative z-10 flex flex-col h-full">
                 <div className="flex justify-between items-start mb-6">
-                  <div className="p-3 rounded-xl bg-black/40 border border-white/10 group-hover:border-primary/50 transition-colors">
+                  <div className="p-3 rounded-xl bg-black/40 border border-white/10 group-hover:border-primary/50 group-hover:glow-shadow-cyan transition-all duration-300">
                     <Layers className="text-primary w-6 h-6" />
                   </div>
                   <div className="flex gap-4">

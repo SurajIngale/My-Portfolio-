@@ -127,6 +127,13 @@
   @apply bg-card/40 backdrop-blur-md border border-white/5;
 }
 
+.glass-panel-strong {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 .glow-text-cyan {
   text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
 }
@@ -137,6 +144,100 @@
 
 .glow-border-cyan {
   box-shadow: inset 0 0 0 1px hsl(var(--primary) / 0.2), 0 0 20px hsl(var(--primary) / 0.1);
+}
+
+.glow-shadow-cyan {
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.15), 0 0 40px rgba(0, 240, 255, 0.05);
+}
+
+.glow-shadow-violet {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.15), 0 0 40px rgba(139, 92, 246, 0.05);
+}
+
+/* Animated gradient border */
+.animated-border {
+  position: relative;
+  background: rgba(15, 23, 42, 0.4);
+  border-radius: 1rem;
+}
+.animated-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(0,240,255,0.4), rgba(139,92,246,0.4), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* HUD panel corner accents */
+.hud-panel {
+  position: relative;
+}
+.hud-panel::before,
+.hud-panel::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-color: hsl(var(--primary) / 0.5);
+  pointer-events: none;
+}
+.hud-panel::before {
+  top: 8px;
+  left: 8px;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+.hud-panel::after {
+  bottom: 8px;
+  right: 8px;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+/* Scanline overlay */
+.scanlines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 240, 255, 0.015) 2px,
+    rgba(0, 240, 255, 0.015) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Aurora text gradient */
+.aurora-text {
+  background: linear-gradient(135deg, #00F5FF 0%, #4DB6AC 20%, #8B5CF6 40%, #00F5FF 60%, #4DB6AC 80%, #8B5CF6 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aurora-shift 6s ease infinite;
+}
+
+@keyframes aurora-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Pulse glow ring */
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.3); }
+  70% { box-shadow: 0 0 0 12px rgba(0, 240, 255, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 240, 255, 0); }
+}
+.pulse-ring {
+  animation: pulse-ring 2s infinite;
 }
 
 /* Custom Cursor default hide */
@@ -154,4 +255,17 @@
   background-size: 40px 40px;
   background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
                     linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+}
+
+/* Aura grid - finer, with cyan tint */
+.bg-aura-grid {
+  background-size: 50px 50px;
+  background-image: linear-gradient(to right, rgba(0,240,255,0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0,240,255,0.03) 1px, transparent 1px);
+}
+
+/* Radial ambient glow */
+.ambient-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(0,240,255,0.06) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(139,92,246,0.05) 0%, transparent 50%);
 }

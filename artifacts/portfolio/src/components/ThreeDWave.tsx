@@ -152,21 +152,15 @@ const WaveParticles = () => {
       <bufferGeometry>
         <bufferAttribute
           attach="attributes-position"
-          count={particles.positions.length / 3}
-          array={particles.positions}
-          itemSize={3}
+          args={[particles.positions, 3]}
         />
         <bufferAttribute
           attach="attributes-aScale"
-          count={particles.scales.length}
-          array={particles.scales}
-          itemSize={1}
+          args={[particles.scales, 1]}
         />
         <bufferAttribute
           attach="attributes-aDepth"
-          count={particles.depths.length}
-          array={particles.depths}
-          itemSize={1}
+          args={[particles.depths, 1]}
         />
       </bufferGeometry>
     </points>

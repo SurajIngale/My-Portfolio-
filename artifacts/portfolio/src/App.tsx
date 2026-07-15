@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { BootSequence } from './components/BootSequence';
+import { ParallaxBackground } from './components/ParallaxBackground';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -12,6 +13,7 @@ import { Projects } from './components/Projects';
 import { Metrics } from './components/Metrics';
 import { Testimonials } from './components/Testimonials';
 import { GithubActivity } from './components/GithubActivity';
+import { EngineeringPhilosophy } from './components/EngineeringPhilosophy';
 import { Blog } from './components/Blog';
 import { Terminal } from './components/Terminal';
 import { Contact } from './components/Contact';
@@ -36,8 +38,10 @@ export default function App() {
       
       <CustomCursor />
       
+      <ParallaxBackground />
+      
       {booted && (
-        <main className="animate-in fade-in duration-1000">
+        <main className="animate-in fade-in duration-1000 relative z-10">
           <Navbar />
           <Hero />
           <Metrics />
@@ -49,6 +53,7 @@ export default function App() {
           <Architecture />
           <Projects />
           <GithubActivity />
+          <EngineeringPhilosophy />
           <Testimonials />
           <Blog />
           <Terminal />

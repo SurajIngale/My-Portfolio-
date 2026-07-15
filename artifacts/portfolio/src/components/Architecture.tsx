@@ -1,22 +1,22 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Globe, ShieldCheck, Users, Bell, CreditCard, Database, Zap, Archive, HardDrive, Server, Layout, Settings, Activity, Cloud } from 'lucide-react';
+import { Globe, ShieldCheck, Settings, Zap, Archive, Database, Cloud, Activity, Server, LayoutGrid as Layout } from 'lucide-react';
 
 const nodes = [
   { id: 'browser', label: 'Client / SPA', icon: Globe, col: 1, row: 3, desc: 'React/Next.js frontend rendering dynamic user interfaces.' },
   { id: 'frontend', label: 'Frontend Edge', icon: Layout, col: 2, row: 3, desc: 'Optimized static asset delivery via Vercel/CDN.' },
-  
+
   { id: 'gateway', label: 'API Gateway', icon: Server, col: 3, row: 3, desc: 'Central routing, rate limiting, and SSL termination.' },
-  
+
   { id: 'auth', label: 'Auth Service', icon: ShieldCheck, col: 4, row: 1, desc: 'JWT validation and OAuth2 integration.' },
   { id: 'services', label: 'Business Logic', icon: Settings, col: 4, row: 3, desc: 'Core Node.js/Go microservices handling application rules.' },
-  
+
   { id: 'cache', label: 'Redis Cache', icon: Zap, col: 5, row: 2, desc: 'Sub-millisecond read access for session & frequent data.' },
   { id: 'queue', label: 'Message Queue', icon: Archive, col: 5, row: 4, desc: 'Kafka/RabbitMQ handling asynchronous background jobs.' },
-  
+
   { id: 'db', label: 'Primary DB', icon: Database, col: 6, row: 2, desc: 'PostgreSQL relational core with read-replicas.' },
   { id: 'storage', label: 'Cloud Storage', icon: Cloud, col: 6, row: 4, desc: 'AWS S3 bucket for media and static uploads.' },
-  
+
   { id: 'monitor', label: 'Observability', icon: Activity, col: 7, row: 3, desc: 'Prometheus & Datadog tracking metrics and logs.' },
 ];
 
@@ -26,7 +26,8 @@ export function Architecture() {
   return (
     <section id="architecture" className="py-24 relative overflow-hidden bg-black/20 border-y border-white/5">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
-      
+      <div className="absolute inset-0 bg-aura-grid opacity-10 pointer-events-none" />
+
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -44,10 +45,11 @@ export function Architecture() {
         </motion.div>
 
         <div className="relative w-full overflow-x-auto pb-12">
-          <div className="min-w-[1000px] h-[550px] relative glass-panel rounded-3xl p-8 border-white/5">
+          <div className="min-w-[1000px] h-[550px] relative hud-panel glass-panel-strong rounded-3xl p-8 border-white/5">
             {/* Grid background */}
             <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none rounded-3xl" />
-            
+            <div className="absolute inset-0 scanlines opacity-30 pointer-events-none rounded-3xl" />
+
             {/* SVG Connecting lines */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
               <defs>
@@ -59,7 +61,7 @@ export function Architecture() {
                   </feMerge>
                 </filter>
               </defs>
-              
+
               {/* Browser -> Frontend -> Gateway */}
               <path d="M 120 275 L 250 275" stroke="rgba(255,255,255,0.1)" strokeWidth="2" fill="none" />
               <circle cx="0" cy="0" r="3" fill="#00F0FF" filter="url(#glow)">
@@ -95,7 +97,7 @@ export function Architecture() {
 
               {/* Queue to Storage */}
               <path d="M 870 366 L 910 366 L 910 458 L 960 458" stroke="rgba(255,255,255,0.1)" strokeWidth="2" strokeDasharray="4 4" fill="none" />
-              
+
               {/* System to Monitor */}
               <path d="M 970 183 L 1020 183 L 1020 275 L 1100 275" stroke="rgba(255,255,255,0.05)" strokeWidth="1" strokeDasharray="2 2" fill="none" />
               <circle cx="0" cy="0" r="1.5" fill="#EF4444" filter="url(#glow)">
@@ -108,7 +110,7 @@ export function Architecture() {
               {nodes.map((node) => {
                 const isHovered = activeNode === node.id;
                 const isDimmed = activeNode !== null && !isHovered;
-                
+
                 return (
                   <div
                     key={node.id}
@@ -130,10 +132,10 @@ export function Architecture() {
                       ${isHovered ? 'border-primary shadow-[0_0_30px_rgba(0,240,255,0.3)] scale-110' : 'border-white/10 hover:border-white/30'}
                     `}>
                       <node.icon className={`w-8 h-8 ${isHovered ? 'text-primary' : 'text-muted-foreground'}`} />
-                      
+
                       {/* Active Pulse Ring */}
                       {isHovered && (
-                        <motion.div 
+                        <motion.div
                           layoutId="activeRingFull"
                           className="absolute inset-0 rounded-2xl border-2 border-primary"
                           initial={{ opacity: 0, scale: 0.8 }}
@@ -142,7 +144,7 @@ export function Architecture() {
                         />
                       )}
                     </div>
-                    
+
                     <div className="mt-3 text-center w-32">
                       <p className={`font-mono text-xs font-bold ${isHovered ? 'text-primary' : 'text-foreground'}`}>
                         {node.label}
@@ -150,15 +152,15 @@ export function Architecture() {
                     </div>
 
                     {/* Tooltip */}
-                    <motion.div 
+                    <motion.div
                       initial={{ opacity: 0, y: 10, scale: 0.9 }}
-                      animate={{ 
-                        opacity: isHovered ? 1 : 0, 
+                      animate={{
+                        opacity: isHovered ? 1 : 0,
                         y: isHovered ? -20 : 10,
                         scale: isHovered ? 1 : 0.9,
                         pointerEvents: isHovered ? 'auto' : 'none'
                       }}
-                      className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-64 glass-panel p-4 rounded-xl shadow-2xl border-primary/30 z-[100]"
+                      className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-64 glass-panel-strong p-4 rounded-xl shadow-2xl border-primary/30 z-[100]"
                     >
                       <h4 className="font-bold text-sm text-primary mb-1">{node.label}</h4>
                       <p className="text-xs text-muted-foreground leading-relaxed">{node.desc}</p>
