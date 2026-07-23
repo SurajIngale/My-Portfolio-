@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Briefcase, Calendar } from 'lucide-react';
+import { Briefcase, Calendar, Sparkles } from 'lucide-react';
 
 const experiences = [
   {
@@ -48,6 +48,12 @@ export function Experience() {
           viewport={{ once: true }}
           className="mb-16"
         >
+          {/* Label pill */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-card/50 backdrop-blur-md rounded-full mb-6 border border-white/5">
+            <Sparkles size={12} className="text-secondary" />
+            <span className="text-xs font-mono text-muted-foreground tracking-widest uppercase">Work History</span>
+          </div>
+
           <h2 className="text-3xl md:text-4xl font-bold flex items-center gap-4">
             <span className="text-primary font-mono text-sm tracking-widest uppercase">02.</span>
             Professional Experience
@@ -62,7 +68,7 @@ export function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="glass-panel p-8 md:p-10 rounded-2xl border-white/5 hover:border-primary/20 transition-all group"
+              className="glass-panel p-8 md:p-10 rounded-2xl border-white/5 hover:border-primary/30 hover:shadow-[0_0_30px_rgba(0,240,255,0.06)] transition-all group"
             >
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
                 <div>
@@ -89,8 +95,9 @@ export function Experience() {
                     </li>
                   ))}
                 </ul>
-                <div className="p-4 bg-primary/5 border border-primary/20 rounded-xl mt-6">
-                  <p className="text-sm font-medium text-primary">
+                <div className="p-4 bg-primary/5 border border-primary/25 rounded-xl mt-6 relative overflow-hidden group/achievement">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover/achievement:opacity-100 transition-opacity pointer-events-none" />
+                  <p className="text-sm font-medium text-primary relative z-10">
                     <span className="font-bold">Key Achievement:</span> {exp.achievements}
                   </p>
                 </div>
@@ -98,7 +105,8 @@ export function Experience() {
 
               <div className="flex flex-wrap gap-2 pt-6 border-t border-white/5">
                 {exp.tech.map(tech => (
-                  <span key={tech} className="px-3 py-1 text-xs font-mono text-muted-foreground bg-black/40 border border-white/5 rounded-full">
+                  <span key={tech}
+                    className="px-3 py-1 text-xs font-mono text-muted-foreground bg-black/40 border border-white/5 rounded-full hover:border-primary/30 hover:text-primary hover:bg-primary/10 transition-all duration-200">
                     {tech}
                   </span>
                 ))}

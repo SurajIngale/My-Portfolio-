@@ -1,6 +1,6 @@
-# [Project name]
+# Suraj Ingale — Premium Full Stack Developer Portfolio
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A futuristic developer portfolio blending cyberpunk aesthetics, glassmorphism, 3D particle waves, and smooth Framer Motion animations — built with React + Vite, Three.js, and Tailwind CSS v4.
 
 ## Run & Operate
 
@@ -22,15 +22,24 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- Portfolio frontend: `artifacts/portfolio/src/`
+- Theme & CSS variables: `artifacts/portfolio/src/index.css`
+- Section components: `artifacts/portfolio/src/components/`
+- Aura-inspired components: `Logo.tsx`, `VoiceWaves.tsx`, `FloatingWaves.tsx`, `ThreeDWave.tsx`, `ParallaxBackground.tsx`
+- Vite config (PORT + BASE_PATH): `artifacts/portfolio/vite.config.ts`
+- Artifact manifest: `artifacts/portfolio/.replit-artifact/artifact.toml`
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- **Design merge approach**: Aura's futuristic design language is overlaid on the portfolio's content and structure — not a full rewrite. Colors, glassmorphism, animations, and 3D backgrounds from Aura are blended with portfolio's own sections/branding.
+- **Spotlight hover pattern**: `useSpring` + `useMotionTemplate` radial gradient mask (from Aura Features/HowItWorks) applied to Skills, Projects, About cards for interactive glow on mouse movement.
+- **Active nav tracking**: IntersectionObserver watches each section; active pill indicator uses Framer Motion `layoutId="activeNavTab"` spring for smooth slide transitions.
+- **Wave layers**: Hero stacks ThreeDWave (Three.js particles) + VoiceWaves (canvas strokes) + scanlines for depth without Spline dependency.
+- **Tailwind v4 theme**: Extended with `--color-primary-light` and `--color-primary-dark` tokens for Aura gradient compatibility.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+A premium dark-mode developer portfolio for Suraj Ingale (Full Stack Software Developer). Features: animated boot sequence, 3D rotating tech model, particle wave backgrounds, active-section navbar, spotlight-hover cards, glassmorphism HUD panels, and sections covering About, Experience, Skills, Projects, Architecture, Terminal, and Contact.
 
 ## User preferences
 

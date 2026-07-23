@@ -5,6 +5,7 @@ import { Download, GitFork as Github, Link as Linkedin, Mail, LayoutGrid as Layo
 import { useEffect, useState, useRef } from 'react';
 import * as THREE from 'three';
 import { ThreeDWave } from './ThreeDWave';
+import { VoiceWaves } from './VoiceWaves';
 
 function FullStackModel() {
   const groupRef = useRef<THREE.Group>(null);
@@ -19,13 +20,13 @@ function FullStackModel() {
   return (
     <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
       <group ref={groupRef}>
-        {/* Core Sphere - Database */}
+        {/* Core — Database */}
         <mesh position={[0, 0, 0]}>
           <octahedronGeometry args={[0.6, 0]} />
           <meshStandardMaterial color="#8B5CF6" wireframe />
         </mesh>
 
-        {/* Middle Layer - Backend/API Hologram */}
+        {/* Middle Layer — Backend/API */}
         <mesh position={[0, 0, 0]}>
           <icosahedronGeometry args={[1.2, 1]} />
           <meshPhysicalMaterial
@@ -38,12 +39,11 @@ function FullStackModel() {
           />
         </mesh>
 
-        {/* Outer Rings - Frontend & Cloud */}
+        {/* Outer Rings — Frontend & Cloud */}
         <mesh rotation={[Math.PI / 2, 0, 0]}>
           <torusGeometry args={[2.0, 0.01, 16, 100]} />
-          <meshBasicMaterial color="#00F0FF" transparent opacity={0.3} />
+          <meshBasicMaterial color="#00F0FF" transparent opacity={0.35} />
         </mesh>
-
         <mesh rotation={[Math.PI / 2.5, Math.PI / 4, 0]}>
           <torusGeometry args={[2.4, 0.01, 16, 100]} />
           <meshBasicMaterial color="#10B981" transparent opacity={0.3} />
@@ -51,11 +51,11 @@ function FullStackModel() {
 
         {/* Floating tech nodes */}
         {[
-          { pos: [2.0, 0, 0], color: "#00F0FF" },
-          { pos: [-2.0, 0, 0], color: "#00F0FF" },
-          { pos: [0, 1.2, 0], color: "#8B5CF6" },
-          { pos: [0, -1.2, 0], color: "#8B5CF6" },
-          { pos: [1.7, 1.7, 0], color: "#10B981" },
+          { pos: [2.0, 0, 0],    color: "#00F0FF" },
+          { pos: [-2.0, 0, 0],   color: "#00F0FF" },
+          { pos: [0, 1.2, 0],    color: "#8B5CF6" },
+          { pos: [0, -1.2, 0],   color: "#8B5CF6" },
+          { pos: [1.7, 1.7, 0],  color: "#10B981" },
           { pos: [-1.7, -1.7, 0], color: "#10B981" },
         ].map((node, i) => (
           <mesh key={i} position={node.pos as [number, number, number]}>
@@ -64,7 +64,7 @@ function FullStackModel() {
           </mesh>
         ))}
 
-        {/* Flowing data lines */}
+        {/* Flowing data ring */}
         <mesh>
           <cylinderGeometry args={[1.5, 1.5, 0.02, 32]} />
           <meshBasicMaterial color="#00F0FF" transparent opacity={0.5} wireframe />
@@ -83,10 +83,18 @@ export function Hero() {
 
   return (
     <section id="home" className="relative min-h-[100dvh] flex items-center justify-center pt-20 overflow-hidden">
-      {/* 3D Wave background */}
+      {/* 3D Particle wave background */}
       <div className="absolute inset-0 opacity-40 pointer-events-none">
         {mounted && <ThreeDWave />}
       </div>
+
+      {/* Voice waves canvas — ambient glow lines */}
+      {mounted && (
+        <VoiceWaves
+          className="absolute inset-0 w-full h-full pointer-events-none mix-blend-screen"
+          opacity={0.35}
+        />
+      )}
 
       {/* Scanline overlay */}
       <div className="absolute inset-0 scanlines pointer-events-none z-[1]" />
@@ -103,8 +111,9 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-panel-strong border-primary/30 text-primary mb-6 pulse-ring">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+          {/* Status badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel-strong border-primary/30 text-primary mb-6 pulse-ring">
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(0,240,255,0.8)]" />
             <span className="text-xs font-mono tracking-wider uppercase">Full Stack Ecosystem Online</span>
           </div>
 
@@ -113,7 +122,15 @@ export function Hero() {
             <br />
             <span className="aurora-text">Suraj Ingale</span>
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-secondary glow-text-cyan block mt-2 text-4xl md:text-5xl">
+            <span
+              className="block mt-2 text-4xl md:text-5xl text-transparent bg-clip-text"
+              style={{
+                backgroundImage: 'linear-gradient(135deg, #00F0FF 0%, #ffffff 40%, #8B5CF6 100%)',
+                backgroundSize: '200% 200%',
+                animation: 'gradient-shift 6s ease infinite',
+                filter: 'drop-shadow(0 0 20px rgba(0,240,255,0.3))',
+              }}
+            >
               Full Stack Software Developer
             </span>
           </h1>
@@ -121,39 +138,47 @@ export function Hero() {
           <p className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
             Building scalable backend systems, modern web applications, and intuitive digital experiences.
             <br /><br />
-            I'm a Full Stack Software Developer with over a year of professional experience building secure, scalable, and high-performance web applications. My expertise spans React, Node.js, TypeScript, PostgreSQL, Redis, and modern backend architectures. I enjoy solving complex engineering problems, designing clean APIs, optimizing performance, and delivering reliable software that creates real business value.
+            Specializing in React, Node.js, TypeScript, PostgreSQL, Redis, and modern backend architectures — focused on clean APIs, optimized performance, and reliable production software.
           </p>
 
           <div className="flex flex-wrap gap-4">
-            <a
+            <motion.a
               href="#projects"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors gap-2 glow-shadow-cyan"
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-all gap-2 shadow-[0_0_30px_rgba(0,240,255,0.3)] hover:shadow-[0_0_40px_rgba(0,240,255,0.5)]"
             >
               <Layout size={18} />
               View Projects
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="#contact"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-lg glass-panel-strong hover:bg-white/5 transition-colors gap-2 border-white/10"
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
+              className="inline-flex items-center justify-center px-6 py-3 rounded-lg glass-panel-strong hover:bg-white/5 transition-all gap-2 border-white/10 hover:border-primary/30"
             >
               <Download size={18} />
               Resume.pdf
-            </a>
+            </motion.a>
           </div>
 
           <div className="flex gap-6 mt-12 text-muted-foreground">
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">
+            <a href="https://github.com" target="_blank" rel="noreferrer"
+              className="hover:text-primary transition-colors hover:drop-shadow-[0_0_8px_rgba(0,240,255,0.6)]">
               <Github size={24} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer"
+              className="hover:text-primary transition-colors hover:drop-shadow-[0_0_8px_rgba(0,240,255,0.6)]">
               <Linkedin size={24} />
             </a>
-            <a href="#contact" className="hover:text-primary transition-colors">
+            <a href="#contact"
+              className="hover:text-primary transition-colors hover:drop-shadow-[0_0_8px_rgba(0,240,255,0.6)]">
               <Mail size={24} />
             </a>
           </div>
         </motion.div>
 
+        {/* 3D Canvas */}
         <div className="h-[500px] w-full relative hidden lg:block">
           {mounted && (
             <Canvas camera={{ position: [0, 2, 7], fov: 45 }}>
@@ -162,20 +187,12 @@ export function Hero() {
               <directionalLight position={[10, 10, 5]} intensity={1} />
               <pointLight position={[-10, -10, -10]} color="#00F0FF" intensity={2} />
               <pointLight position={[10, 10, 10]} color="#8B5CF6" intensity={2} />
-
               <FullStackModel />
-
-              <ContactShadows
-                position={[0, -2.5, 0]}
-                opacity={0.4}
-                scale={10}
-                blur={2}
-                far={4}
-              />
+              <ContactShadows position={[0, -2.5, 0]} opacity={0.4} scale={10} blur={2} far={4} />
             </Canvas>
           )}
 
-          {/* Floating HUD Stats - Top Right */}
+          {/* Floating HUD — top right */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -191,7 +208,7 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Floating HUD Stats - Bottom Left */}
+          {/* Floating HUD — bottom left */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -207,9 +224,8 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* HUD corner accent - top left */}
+          {/* HUD corner accents */}
           <div className="absolute top-0 left-0 w-16 h-16 border-l-2 border-t-2 border-primary/30 rounded-tl-xl pointer-events-none" />
-          {/* HUD corner accent - bottom right */}
           <div className="absolute bottom-0 right-0 w-16 h-16 border-r-2 border-b-2 border-secondary/30 rounded-br-xl pointer-events-none" />
         </div>
       </div>

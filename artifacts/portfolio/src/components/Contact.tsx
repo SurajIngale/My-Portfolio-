@@ -121,6 +121,12 @@ export function Contact() {
           className="order-2 lg:order-1"
         >
           <div className="mb-10">
+            {/* Label pill */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-card/50 backdrop-blur-md rounded-full mb-6 border border-white/5">
+              <Terminal size={12} className="text-primary" />
+              <span className="text-xs font-mono text-muted-foreground tracking-widest uppercase">Get In Touch</span>
+            </div>
+
             <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center gap-3">
               <Terminal className="text-primary" /> Initialize Connection
             </h2>
@@ -168,7 +174,7 @@ export function Contact() {
             <button 
               type="submit"
               disabled={status !== 'idle'}
-              className="relative z-10 w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-4 rounded-lg transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
+              className="relative z-10 w-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium py-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:shadow-[0_0_40px_rgba(0,240,255,0.5)]"
             >
               {status === 'idle' && (
                 <>

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Globe, ShieldCheck, Settings, Zap, Archive, Database, Cloud, Activity, Server, LayoutGrid as Layout } from 'lucide-react';
+import { Globe, ShieldCheck, Settings, Zap, Archive, Database, Cloud, Activity, Server, LayoutGrid as Layout, Cpu } from 'lucide-react';
 
 const nodes = [
   { id: 'browser', label: 'Client / SPA', icon: Globe, col: 1, row: 3, desc: 'React/Next.js frontend rendering dynamic user interfaces.' },
@@ -35,6 +35,12 @@ export function Architecture() {
           viewport={{ once: true }}
           className="mb-16 text-center md:text-left"
         >
+          {/* Label pill */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-card/50 backdrop-blur-md rounded-full mb-6 border border-white/5">
+            <Cpu size={12} className="text-primary" />
+            <span className="text-xs font-mono text-muted-foreground tracking-widest uppercase">System Design</span>
+          </div>
+
           <h2 className="text-3xl md:text-4xl font-bold flex items-center justify-center md:justify-start gap-4">
             <span className="text-primary font-mono text-sm tracking-widest uppercase">04.</span>
             Full Stack Pipeline

@@ -9,6 +9,8 @@
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   --color-border: hsl(var(--border));
+  --color-primary-light: hsl(var(--primary-light));
+  --color-primary-dark: hsl(var(--primary-dark));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
 
@@ -58,6 +60,10 @@
   --border: 240 10% 12%;
   --input: 240 10% 12%;
   --ring: 180 100% 50%;
+
+  /* Aura-inspired extended palette */
+  --primary-light: 180 100% 65%; /* lighter cyan */
+  --primary-dark:  180 100% 30%; /* deeper cyan/teal */
   
   --card: 240 10% 6%;
   --card-foreground: 0 0% 100%;
@@ -228,6 +234,21 @@
 @keyframes aurora-shift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
+}
+
+/* Aura gradient-shift — for animated gradient text */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Neon animated border */
+@keyframes neon-pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(0,240,255,0.3), 0 0 20px rgba(0,240,255,0.1); }
+  50%       { box-shadow: 0 0 16px rgba(0,240,255,0.6), 0 0 40px rgba(0,240,255,0.2); }
+}
+.neon-border {
+  animation: neon-pulse 3s ease-in-out infinite;
 }
 
 /* Pulse glow ring */
