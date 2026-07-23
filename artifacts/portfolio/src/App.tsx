@@ -6,6 +6,7 @@ import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Experience } from './components/Experience';
 import { Skills } from './components/Skills';
+import { RobotShowcase } from './components/RobotShowcase';
 import { UIShowcase } from './components/UIShowcase';
 import { Process } from './components/Process';
 import { Architecture } from './components/Architecture';
@@ -48,6 +49,7 @@ export default function App() {
           <About />
           <Experience />
           <Skills />
+          <RobotShowcase />
           <UIShowcase />
           <Process />
           <Architecture />
